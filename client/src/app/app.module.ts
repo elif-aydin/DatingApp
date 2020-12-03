@@ -16,6 +16,7 @@ import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptor } from './_intertceptors/error.interceptor';
 import { SharedModule } from './_modules/shared.module';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { SharedModule } from './_modules/shared.module';
     ListsComponent,
     MessagesComponent,
     TestErrorsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     BrowserModule,
