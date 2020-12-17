@@ -19,12 +19,12 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { MessagesComponent } from './messages/messages.component';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { ErrorInterceptor } from './_intertceptors/error.interceptor';
 import { JwtInterceptor } from './_intertceptors/jwt.interceptor';
 import { LoadingInterceptor } from './_intertceptors/loading.interceptor';
 import { SharedModule } from './_modules/shared.module';
-
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { SharedModule } from './_modules/shared.module';
     MemberCardComponent,
     MemberEditComponent,
     PhotoEditorComponent,
-    TextInputComponent
+    TextInputComponent,
+    DateInputComponent
   ],
   imports: [
     BrowserModule,
