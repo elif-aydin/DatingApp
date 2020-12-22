@@ -28,8 +28,10 @@ export class ErrorInterceptor implements HttpInterceptor {
                   }
                 }
                 throw modalStateErrors.flat();
-              } else {
+              } else if (typeof (error.error) === 'object') {
                 this.toastr.error(error.statusText, error.status);
+              } else {
+                this.toastr.error(error.error, error.status);
               }
               break;
             case 401:
@@ -41,14 +43,15 @@ export class ErrorInterceptor implements HttpInterceptor {
             case 500:
               const navigationExtras: NavigationExtras = { state: { error: error.error } }
               this.router.navigateByUrl('/server-error', navigationExtras);
-              break
+              break;
             default:
-              this.toastr.error('Something unexpected happened');
+              this.toastr.error('Something unexpected went wrong');
+              console.log(error);
               break;
           }
         }
         return throwError(error);
       })
-    );
+    )
   }
 }
