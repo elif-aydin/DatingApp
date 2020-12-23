@@ -25,6 +25,7 @@ import { ErrorInterceptor } from './_intertceptors/error.interceptor';
 import { JwtInterceptor } from './_intertceptors/jwt.interceptor';
 import { LoadingInterceptor } from './_intertceptors/loading.interceptor';
 import { SharedModule } from './_modules/shared.module';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SharedModule } from './_modules/shared.module';
     MemberEditComponent,
     PhotoEditorComponent,
     TextInputComponent,
-    DateInputComponent
+    DateInputComponent,
+    MemberMessagesComponent
   ],
   imports: [
     BrowserModule,
