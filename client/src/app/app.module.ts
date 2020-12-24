@@ -22,9 +22,9 @@ import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
 import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
-import { ErrorInterceptor } from './_interceptors/error.interceptor';
-import { JwtInterceptor } from './_interceptors/jwt.interceptor';
-import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { ErrorInterceptor } from './_intertceptors/error.interceptor';
+import { JwtInterceptor } from './_intertceptors/jwt.interceptor';
+import { LoadingInterceptor } from './_intertceptors/loading.interceptor';
 import { SharedModule } from './_modules/shared.module';
 
 
