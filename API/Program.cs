@@ -18,8 +18,9 @@ namespace API {
             try {
                 var context = services.GetRequiredService<DataContext>();
                 var userManager = services.GetRequiredService<UserManager<AppUser>>();
+                var roleManager = services.GetRequiredService<RoleManager<AppRole>>();
                 await context.Database.MigrateAsync();
-                await Seed.SeedUsers(userManager);
+                await Seed.SeedUsers(userManager, roleManager);
             } catch (Exception exp) {
                 var logger = services.GetRequiredService<ILogger<Program>>();
                 logger.LogError(exp, "An error occured during migration");
