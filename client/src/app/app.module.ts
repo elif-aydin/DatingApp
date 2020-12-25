@@ -26,6 +26,7 @@ import { ErrorInterceptor } from './_intertceptors/error.interceptor';
 import { JwtInterceptor } from './_intertceptors/jwt.interceptor';
 import { LoadingInterceptor } from './_intertceptors/loading.interceptor';
 import { SharedModule } from './_modules/shared.module';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { SharedModule } from './_modules/shared.module';
     PhotoEditorComponent,
     TextInputComponent,
     DateInputComponent,
-    MemberMessagesComponent
+    MemberMessagesComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
