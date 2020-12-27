@@ -21,6 +21,7 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
@@ -56,7 +57,8 @@ import { SharedModule } from './_modules/shared.module';
     HasRoleDirective,
     UserManagementComponent,
     PhotoManagementComponent,
-    RolesModalComponent
+    RolesModalComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
