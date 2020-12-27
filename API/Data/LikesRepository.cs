@@ -32,7 +32,8 @@ namespace API.Data {
                 likes = likes.Where(like => like.LikedUserId == likesParams.UserId);
                 users = likes.Select(like => like.SourceUser);
             }
-            var likedUser = users.Select(user => new LikeDto {
+
+            var likedUsers = users.Select(user => new LikeDto {
                 Username = user.UserName,
                 KnownAs = user.KnownAs,
                 Age = user.DateOfBirth.CalculateAge(),
@@ -40,7 +41,9 @@ namespace API.Data {
                 City = user.City,
                 Id = user.Id
             });
-            return await PagedList<LikeDto>.CreateAsync(likedUser, likesParams.PageNumber, likesParams.PageSize);
+
+            return await PagedList<LikeDto>.CreateAsync(likedUsers,
+                likesParams.PageNumber, likesParams.PageSize);
         }
 
         public async Task<AppUser> GetUserWithLikes(int userId) {
