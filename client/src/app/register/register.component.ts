@@ -19,12 +19,12 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
-    this.initializeForm();
+    this.intitializeForm();
     this.maxDate = new Date();
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
-  initializeForm() {
+  intitializeForm() {
     this.registerForm = this.fb.group({
       gender: ['male'],
       username: ['', Validators.required],

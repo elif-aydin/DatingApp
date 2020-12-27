@@ -43,16 +43,16 @@ export class UserManagementComponent implements OnInit {
           user.roles = [...rolesToUpdate.roles]
         })
       }
-    });
+    })
   }
 
   private getRolesArray(user) {
     const roles = [];
     const userRoles = user.roles;
     const availableRoles: any[] = [
-      { name: 'Admin', value: 'Admin' },
-      { name: 'Moderator', value: 'Moderator' },
-      { name: 'Member', value: 'Member' }
+      {name: 'Admin', value: 'Admin'},
+      {name: 'Moderator', value: 'Moderator'},
+      {name: 'Member', value: 'Member'}
     ];
 
     availableRoles.forEach(role => {
