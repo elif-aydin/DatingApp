@@ -49,11 +49,10 @@ namespace API.Controllers {
             return Ok(await _userManager.GetRolesAsync(user));
         }
 
-
         [Authorize(Policy = "ModeratePhotoRole")]
         [HttpGet("photos-to-moderate")]
         public ActionResult GetPhotosForModeration() {
-            return Ok("Admins or moderators admins can see this");
+            return Ok("Admins or moderators can see this");
         }
     }
 }
