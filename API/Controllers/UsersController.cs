@@ -26,11 +26,12 @@ namespace API.Controllers {
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams userParams) {
-            var user = await _unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUsername());
-            userParams.CurrentUsername = user.UserName;
+            var username = User.GetUsername();
+            var gender = await _unitOfWork.UserRepository.GetUserGender(username);
+            userParams.CurrentUsername = username;
 
             if (string.IsNullOrEmpty(userParams.Gender))
-                userParams.Gender = user.Gender == "male" ? "female" : "male";
+                userParams.Gender = gender == "male" ? "female" : "male";
             var users = await _unitOfWork.UserRepository.GetMembersAsync(userParams);
 
             Response.AddPaginationHeader(users.CurrentPage, users.PageSize,
@@ -52,7 +53,7 @@ namespace API.Controllers {
             if (await _unitOfWork.Complete()) return NoContent();
             return BadRequest("Failed to update user");
         }
-        
+
         [HttpPost("add-photo")]
         public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file) {
             var user = await _unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUsername());
